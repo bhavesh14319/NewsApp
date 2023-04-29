@@ -1,13 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import loader from './loader.svg'
 
-// export default class spinner extends Component {
-//   render() {
-//     return (
-//       
-//     )
-//   }
-// }
 
 
 export default function spinner() {
