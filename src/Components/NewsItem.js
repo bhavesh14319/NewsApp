@@ -34,6 +34,7 @@ function NewsItem(props) {
             <a
               href={url}
               target="_blank"
+              rel="noreferrer"
               className="btn btn-sm btn-primary btn-dark"
             >
               Read More..

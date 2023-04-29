@@ -13,7 +13,10 @@ const NewsComponent=(props) => {
     let [page,setPage] = useState(1);
     const [loading,setLoading] = useState(true);
 
-const updateNews= async ()=> {
+
+
+useEffect(()=>{
+    const updateNews= async ()=> {
         props.setProgress(10);
         setLoading(true);
         let data = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=2c890cef818a4c1fadf3114ff1de0c68&page=${page}&pageSize=${props.pageSize}`);
@@ -29,9 +32,8 @@ const updateNews= async ()=> {
         setLoading(false);
         props.setProgress(100);
 }
-
-useEffect(()=>{
     updateNews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
 
 const fetchMoreData = async ()=> {
@@ -100,17 +102,4 @@ export default NewsComponent
 
 
 
-//   return (
-//    <>   
-    
-
-      
-    
-//  </>  
-
-//   )
-// }
-
-
-// export default NewsComponent
 
